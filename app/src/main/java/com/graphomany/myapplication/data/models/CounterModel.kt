@@ -1,4 +1,4 @@
-package ua.zt.mezon.graphomania.fsmandstrategydemo.datasources
-
-class ItemData(val title: String) {
+package  com.graphomany.myapplication.data.models
+//class to represent the state
+class CounterModel(val count: Int) {
 }

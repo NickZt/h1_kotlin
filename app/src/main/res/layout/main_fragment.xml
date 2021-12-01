@@ -8,52 +8,60 @@
         <import type="android.view.View" />
 
         <variable
-            name="viewHolder"
-            type="com.jnj.acuvue.consumer.ui.fittedproducts.adapters.FittedProductsAdapter.SolutionsProductsHolder" />
+            name="evenCounterCount"
+            type="Integer" />
 
         <variable
-            name="fitted"
-            type="Boolean" />
+            name="counterCount"
+            type="Integer" />
 
         <variable
-            name="last"
-            type="Boolean" />
-
-        <variable
-            name="brandId"
-            type="String" />
-
-        <variable
-            name="isNew"
+            name="isEven"
             type="boolean" />
-
-        <variable
-            name="labelName"
-            type="String" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.main.MainFragment">
 
-    <TextView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MainFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.main.MainFragment">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add"
-        />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/messageCounterCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`Count: ` +String.valueOf(counterCount)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/messageEvenCounterCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{` Even Number Count: ` +String.valueOf(evenCounterCount)}"
+            app:layout_constraintEnd_toEndOf="@+id/messageCounterCount"
+            app:layout_constraintStart_toStartOf="@+id/messageCounterCount"
+            app:layout_constraintTop_toBottomOf="@+id/messageCounterCount" />
+
+        <TextView
+            android:id="@+id/messageEven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{isEven ? @string/even : @string/odd}"
+            app:layout_constraintEnd_toEndOf="@+id/messageCounterCount"
+            app:layout_constraintStart_toStartOf="@+id/messageEvenCounterCount"
+            app:layout_constraintTop_toBottomOf="@+id/messageEvenCounterCount"
+            tools:text="@string/odd" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@android:drawable/ic_input_add" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
