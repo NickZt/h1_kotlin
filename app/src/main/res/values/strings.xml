@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">H1 kotlin</string>
+    <string name="even">Is even</string>
+    <string name="odd">Not even</string>
+</resources>
